@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>charging-station-db</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <flyway.user>charging-station-application</flyway.user>
+        <flyway.password>charging-station-application</flyway.password>
+        <flyway.schemas>public</flyway.schemas>
+        <flyway.url>jdbc:postgresql://127.0.0.1:5432/charging-station-application-dev</flyway.url>
+        <flyway.driver>org.postgresql.Driver</flyway.driver>
+        <flyway.cleanDisabled>false</flyway.cleanDisabled>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>production</id>
+            <properties>
+                <flyway.user>charging-station-application</flyway.user>
+                <flyway.password>charging-station-application</flyway.password>
+                <flyway.schemas>public</flyway.schemas>
+                <flyway.url>jdbc:postgresql://127.0.0.1:5432/charging-station-application</flyway.url>
+                <flyway.driver>org.postgresql.Driver</flyway.driver>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>10.9.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>42.7.2</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-database-postgresql</artifactId>
+                        <version>10.9.1</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
