@@ -23,7 +23,7 @@
 
     <profiles>
         <profile>
-            <id>production</id>
+            <id>prod</id>
             <properties>
                 <flyway.user>charging-station-application</flyway.user>
                 <flyway.password>charging-station-application</flyway.password>
