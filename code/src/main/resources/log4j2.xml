@@ -72,16 +72,15 @@
             </PatternLayout>
 
             <Policies>
-            <!-- 设置日志文件切分参数 -->
-            <!--<OnStartupTriggeringPolicy/>-->
-            <!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新-->
-            <SizeBasedTriggeringPolicy size="100 MB" />
-            <!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置-->
-            <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <!-- 设置日志文件切分参数 -->
+                <!--<OnStartupTriggeringPolicy/>-->
+                <!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新-->
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+                <!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置-->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
             </Policies>
             <!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i-->
             <!--<DefaultRolloverStrategy max="100"/>-->
-
 
 
         </RollingFile>
@@ -155,7 +154,7 @@
         </Root>
 
         <!--spring日志-->
-        <Logger name="org.springframework" level="debug"/>
+        <Logger name="org.springframework" level="info"/>
         <!--druid数据源日志-->
         <Logger name="druid.sql.Statement" level="warn"/>
         <!-- mybatis日志 -->
@@ -163,7 +162,6 @@
         <Logger name="org.hibernate" level="warn"/>
         <Logger name="com.zaxxer.hikari" level="info"/>
         <Logger name="org.quartz" level="info"/>
-        <Logger name="com.andya.demo" level="debug"/>
     </Loggers>
 
 </Configuration>

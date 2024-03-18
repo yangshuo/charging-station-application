@@ -1,10 +1,9 @@
-package org.yangshuosdu.chargingstation;
+package io.github.yangshuo.cs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages={"org.yangshuosdu.chargingstation"})
+@SpringBootApplication(scanBasePackages={"io.github.yangshuo.cs"})
 public class ChargingStationApplication {
 
 	public static void main(String[] args) {

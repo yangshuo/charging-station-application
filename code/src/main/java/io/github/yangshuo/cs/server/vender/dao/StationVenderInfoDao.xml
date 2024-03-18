@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.yangshuo.cs.server.vender.dao.StationVenderInfoDao">
+    <select id="queryAll" parameterType="java.util.HashMap" resultType="io.github.yangshuo.cs.server.vender.dao.StationVenderInfoPo">
+        select
+            vender_id,
+            vender_name
+        from
+            station_vender_info
+    </select>
+</mapper>
